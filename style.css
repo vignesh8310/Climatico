@@ -1,0 +1,159 @@
+/* -------------------- Base styles -------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: #222;
+    font-family: 'Montserrat', sans-serif;
+    background-image: url('https://source.unsplash.com/1600x900/?landscape');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    font-size: 120%;
+    transition: background-image 0.5s ease-in-out;
+    color: white;
+}
+
+/* -------------------- Weather card -------------------- */
+.card {
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(15px);
+    border-radius: 30px;
+    padding: 2em;
+    max-width: 420px;
+    margin: 1em;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
+    position: relative;
+    z-index: 2;
+}
+
+/* -------------------- Search bar -------------------- */
+.search {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+input.searchbar {
+    border: none;
+    outline: none;
+    padding: 0.6em 1.2em;
+    border-radius: 24px;
+    background: #00000060;
+    color: whitesmoke;
+    font-family: inherit;
+    font-size: 105%;
+    width: calc(100% - 100px);
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    background-clip: padding-box;
+}
+
+input.searchbar:focus {
+    border: 2px solid;
+    border-image-slice: 1;
+    border-image-source: linear-gradient(90deg, #00dbde, #fc00ff);
+}
+
+.searchbar:hover {
+    transform: scale(1.03);
+}
+
+/* -------------------- Search button -------------------- */
+button {
+    margin: 1.7em;
+    border-radius: 50%;
+    border: none;
+    height: 45px;
+    width: 45px;
+    outline: none;
+    background: #7c7c7c2b;
+    color: whitesmoke;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button:hover {
+    background: white;
+    color: black;
+}
+
+/* -------------------- Weather details -------------------- */
+
+
+.flex {
+    display: flex;
+    align-items: center;
+}
+
+.description {
+    text-transform: capitalize;
+    margin-left: 8px;
+}
+
+.humidity,
+.wind {
+    margin-top: 0.5em;
+}
+
+/* -------------------- Loading state -------------------- */
+.weather.loading {
+    visibility: hidden;
+    max-height: 20px;
+    position: relative;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.weather.loading:after {
+    visibility: visible;
+    content: "Loading...";
+    color: white;
+    position: absolute;
+    top: 0;
+    left: 20px;
+    opacity: 1;
+}
+
+.weather:not(.loading) {
+    visibility: visible;
+    max-height: none;
+    opacity: 1;
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* -------------------- Hover effect -------------------- */
+.card:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+/* -------------------- Optional animated overlay -------------------- */
+.weather-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background: url('https://media.giphy.com/media/xT9IgzoKnwFNmISR8I/giphy.gif') center/cover no-repeat;
+    opacity: 0.08;
+    z-index: 1;
+}
