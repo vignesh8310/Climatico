@@ -1,4 +1,4 @@
-🌦️Climatico - Where weather meets design
+**🌦️Climatico - Where weather meets design**
 
 A simple weather app that shows real-time weather data using the OpenWeatherMap API. It also fetches background images for the searched city using the Pexels API to make it look clean and fresh.
 
