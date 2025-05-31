@@ -26,7 +26,6 @@ A simple weather app that shows real-time weather data using the OpenWeatherMap 
 
 1. Clone the repo:
 
-   ```bash
   git clone https://github.com/vignesh8310/Climatico.git "Climatico - Where weather meets design"
   cd "Climatico - Where weather meets design"
 
